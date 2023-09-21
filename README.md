@@ -1,0 +1,2 @@
+# QR-CODE-GENERATOR-HTML-CSS-JS
+![Screenshot 2023-09-21 225417](https://github.com/Narayan-Thakare/QR-CODE-GENERATOR-HTML-CSS-JS/assets/113063658/e8931eb1-59aa-4131-98f4-c7139f1f7a12)
