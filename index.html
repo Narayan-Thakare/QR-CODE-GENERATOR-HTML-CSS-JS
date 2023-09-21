@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large Data QR Code Generator</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #text {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Large Data QR Code Generator</h1>
+        <textarea id="text" placeholder="Enter your large data here"></textarea>
+        <div id="qrcode"></div>
+    </div>
+
+    <script>
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 400,
+            height: 400
+        });
+
+        function makeCode() {
+            var elText = document.getElementById("text");
+
+            if (!elText.value) {
+                elText.focus();
+                return;
+            }
+
+            // Generate the QR code using the library
+            qrcode.makeCode(elText.value);
+        }
+
+        // Generate the QR code when the text area is updated
+        document.getElementById("text").addEventListener("input", makeCode);
+
+        // Initial generation
+        makeCode();
+    </script>
+</body>
+</html>
